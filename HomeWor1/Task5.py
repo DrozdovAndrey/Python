@@ -16,7 +16,7 @@ def point_distance():
             input_y2 = float(input_y2)
             print(((input_x2-input_x1)**2 + (input_y2-input_y2)**2)**0.5)
             break
-        except:
+        except ValueError:
              print('Вы ввели непонятные символы')
 
 point_distance()

@@ -23,7 +23,7 @@ def range_of_points():
                 
             else:
                 print('Вы ввели неправиьные число')
-        except:
+        except ValueError:
              print('Вы ввели непонятные символы')
 
 range_of_points()

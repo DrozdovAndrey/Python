@@ -24,7 +24,7 @@ def quater_number():
                     break
             else:
                 print('Вы ввели неправиьные число')
-        except:
+        except ValueError:
              print('Вы ввели непонятные символы')
 
 quater_number()

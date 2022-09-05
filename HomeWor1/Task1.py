@@ -17,7 +17,7 @@ def check_weekend():
                     break
             else:
                 print('Вы ввели неправиьные число')
-        except:
+        except ValueError:
              print('Вы ввели непонятные символы')
 
 check_weekend()
