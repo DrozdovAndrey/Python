@@ -9,12 +9,13 @@
 
 def sum_float():
     while True:
-        input_num = input('Введите вещественное число(Например:56.765): ')
+        input_num = (input('Введите вещественное число(Например:56.765): '))
         try:
-            input_num = float(input_num)
+            input_num = abs(float(input_num))
             input_num = str(input_num)
             input_list = list(input_num)
             input_list.remove('.')
+            
             print(input_list)
             sum_num = 0
             for i in input_list:

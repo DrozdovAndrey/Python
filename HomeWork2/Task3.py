@@ -3,3 +3,23 @@
 # Если перевернутое число не равно исходному, то они складываются и проверяются на палиндром еще раз.
 # Это происходит до тех пор, пока не будет найден палиндром.
 # Напишите такую программу, которая найдет палиндром введенного пользователем числа.
+
+def polindrom():
+    while True:
+        input_num = input('Введите чило больше 0: ')
+        try:
+            input_num = int(input_num)
+            list_factorial = list(range(1,input_num+1))
+            
+            factorial = 1
+            for i in list_factorial:
+                factorial *= i
+                list_factorial[i-1] = factorial
+                
+            print(list_factorial)
+            break
+        except ValueError:
+            print('Вы ввели неправильные данные!')    
+
+
+polindrom()
