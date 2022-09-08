@@ -6,20 +6,34 @@
 
 def polindrom():
     while True:
-        input_num = input('Введите чило больше 0: ')
+        input_num = input('Введите чило: ')
         try:
-            input_num = int(input_num)
-            list_factorial = list(range(1,input_num+1))
             
-            factorial = 1
-            for i in list_factorial:
-                factorial *= i
-                list_factorial[i-1] = factorial
-                
-            print(list_factorial)
+            input_num = int(input_num)
+            polindrom_find(input_num)
             break
+                   
+                   
+
         except ValueError:
             print('Вы ввели неправильные данные!')    
 
+def polindrom_find(input_num):
+    input_num = str(input_num)
+    input_list = list(input_num)
+    # print(input_list)
+    reverse_input_list = input_list
+    reverse_input_list.reverse()
+    # print(reverse_input_list)
+    reverse_input_num = "".join(reverse_input_list)
+    print(f'Перевернутое: {reverse_input_num}')
+    if input_num == reverse_input_num:
+        
+        print('   Это полиндром')
+    else:
+        input_num = int(input_num) + int(reverse_input_num)
+        print(f'Сумма  чисел: {input_num}')
+        polindrom_find(input_num)
 
 polindrom()
+
