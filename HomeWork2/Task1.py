@@ -7,11 +7,6 @@
 
 
 
-
-
-
-
-
 def sum_float():
     while True:
         input_num = input('Введите вещественное число(Например:56.765): ')
