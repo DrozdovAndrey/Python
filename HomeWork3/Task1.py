@@ -13,5 +13,5 @@ def sum_odd_index(list_of_numbers):
         i+=2
     print(sum_numbers)
 
-list_of_numbers = [2,3,5,9,3]
+list_of_numbers = [2,3,5,9,3,7,9,-9,-9]
 sum_odd_index(list_of_numbers)

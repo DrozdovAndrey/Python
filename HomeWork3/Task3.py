@@ -10,9 +10,10 @@ def difference_max_min(list_of_numbers):
     while i < len(list_of_numbers):
         list_of_numbers[i] = round(list_of_numbers[i] - (int(list_of_numbers[i])),10)
         i += 1
+        
     difference_number = round((max(list_of_numbers) - min(list_of_numbers)), 10)
     print(difference_number)
 
 
-list_of_numbers = [1.1, 1.2, 3.1, 5.17, 10.02]
+list_of_numbers = [1.1, 1.2, 3.1, 5.717, 10.001]
 difference_max_min(list_of_numbers)
