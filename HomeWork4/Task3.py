@@ -23,8 +23,8 @@ with open('FIO1.txt', 'r+', encoding= 'utf_8')  as data:
     new_data = data.readlines()
     for line in new_data:
         if '5' in line:
-            data.write(f'{line.upper()}\n')
+            print(f'{line.upper()}')
         else:
-            data.write(f'{line}\n')
+            print(f'{line}')
             
 
