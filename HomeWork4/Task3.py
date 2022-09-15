@@ -19,7 +19,12 @@
 #     data.write(f'{input()} \n')
 #     data.write(f'{input()} \n')
 
-with open('FIO1.txt', 'a', encoding= 'utf_8')  as data:
-    for line in data:
-        
-         data.write(line.upper())
+with open('FIO1.txt', 'r+', encoding= 'utf_8')  as data:
+    new_data = data.readlines()
+    for line in new_data:
+        if '5' in line:
+            data.write(f'{line.upper()}\n')
+        else:
+            data.write(f'{line}\n')
+            
+
