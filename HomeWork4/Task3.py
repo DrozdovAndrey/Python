@@ -10,3 +10,16 @@
 # НАТАЛЬЯ ТАРАСОВА 5
 # Фредди Меркури 3
 # Денис Байцуров 4
+
+
+# with open('FIO1.txt','a', encoding= 'utf_8')  as data:
+#     data.write(f'{input()} \n')
+#     data.write(f'{input()} \n')
+#     data.write(f'{input()} \n')
+#     data.write(f'{input()} \n')
+#     data.write(f'{input()} \n')
+
+with open('FIO1.txt', 'a', encoding= 'utf_8')  as data:
+    for line in data:
+        
+         data.write(line.upper())
