@@ -47,7 +47,7 @@ def the_game(flag, candy_count, player1_name, player2_name):
             print(f'Ход игрока {player1_name}')
             player1 = check_input_int(candy_per_move)
             candy_count -= player1
-            print(candy_count)
+            print(f'Осталось {candy_count} конфет')
             flag = False
             if candy_count == 1:
                 print(f'Игрок {player1_name} выиграл')
@@ -56,7 +56,7 @@ def the_game(flag, candy_count, player1_name, player2_name):
             print(f'Ход игрока {player2_name}')
             player2 = check_input_int(candy_per_move)
             candy_count -= player2
-            print(candy_count)
+            print(f'Осталось {candy_count} конфет')
             flag = True
             if candy_count == 1:
                 print(f'Игрок {player2_name} выиграл')
