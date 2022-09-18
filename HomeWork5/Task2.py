@@ -7,11 +7,11 @@
 import random
 
 
-def check_input_int():
+def check_input_int(candy_per_move):
     while True:
         try:
-            input_num = int(input('Ввеите число от 1 до 28: '))
-            if input_num > 0 and input_num < 29:
+            input_num = int(input(f'Ввеите число от 1 до {candy_per_move}: '))
+            if input_num > 0 and input_num < candy_per_move + 1:
                 return input_num
         except ValueError:
             print('Вы ввели неправильное значение!')
@@ -26,29 +26,39 @@ def get_toss():
 def get_candy():
     while True:
         try:
-            input_num = int(input('Ввеите число конфет. Для интереса не вводите значение меньше 100: '))
+            input_num = int(input('Ввеите число конфет: '))
             if input_num > 99:
                 return input_num
         except ValueError:
             print('Вы ввели неправильное значение!')
-def the_game(flag, all, player1_name, player2_name):
-    while all > 0:
+
+def get_candy_per_move(candy_count):
+    while True:
+        try:
+            input_num = int(input(f'Ввеите число конфет, которое будем брать за раз, но не больше чем {(candy_count//3)}: '))
+            if input_num > 0 and input_num < (candy_count//3):
+                return input_num
+        except ValueError:
+            print('Вы ввели неправильное значение!')
+
+def the_game(flag, candy_count, player1_name, player2_name):
+    while candy_count > 0:
         if flag:
             print(f'Ход игрока {player1_name}')
-            player1 = check_input_int()
-            all -= player1
-            print(all)
+            player1 = check_input_int(candy_per_move)
+            candy_count -= player1
+            print(candy_count)
             flag = False
-            if all == 1:
+            if candy_count == 1:
                 print(f'Игрок {player1_name} выиграл')
                 break
         else:
             print(f'Ход игрока {player2_name}')
-            player2 = check_input_int()
-            all -= player2
-            print(all)
+            player2 = check_input_int(candy_per_move)
+            candy_count -= player2
+            print(candy_count)
             flag = True
-            if all == 1:
+            if candy_count == 1:
                 print(f'Игрок {player2_name} выиграл')
                 break
 
@@ -56,9 +66,10 @@ def get_name():
     name = input('Введите ваше имя:')
     return name
 
-all = get_candy()
-print(f'Всего {all}')
+
+candy_count = get_candy()
+candy_per_move = get_candy_per_move(candy_count)
 flag = get_toss()
 player1_name = get_name()
 player2_name = get_name()
-the_game(flag, all, player1_name, player2_name)
+the_game(flag, candy_count, player1_name, player2_name)
