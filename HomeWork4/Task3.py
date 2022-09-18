@@ -17,14 +17,21 @@
 #     data.write(f'{input()} \n')
 #     data.write(f'{input()} \n')
 #     data.write(f'{input()} \n')
-#     data.write(f'{input()} \n')
 
-with open('FIO1.txt', 'r+', encoding= 'utf_8')  as data:
-    new_data = data.readlines()
-    for line in new_data:
-        if '5' in line:
-            print(f'{line.upper()}')
-        else:
-            print(f'{line}')
-            
+
+def reading_data():
+    with open('FIO1.txt', 'r', encoding= 'utf_8')  as data:
+        new_data = data.readlines()
+    return new_data
+def rewrite_data(new_data):    
+    with open('FIO1.txt', 'w', encoding= 'utf_8')  as data:   
+        for line in new_data:
+            if '5' in line:
+                data.write(f'{line.upper()}')
+            else:
+                data.write(f'{line}')
+
+
+new_data = reading_data()
+rewrite_data(new_data)            
 
