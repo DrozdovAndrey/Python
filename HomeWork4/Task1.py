@@ -2,6 +2,7 @@
 # N = 20 -> [2,5]
 # N = 30 -> [2, 3, 5]
 
+
 def check_input_int():
     while True:
         try:
