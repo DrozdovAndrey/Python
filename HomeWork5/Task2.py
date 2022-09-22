@@ -27,7 +27,7 @@ def get_candy():
     while True:
         try:
             input_num = int(input('Ввеите число конфет: '))
-            if input_num > 99:
+            if input_num > 2:
                 return input_num
         except ValueError:
             print('Вы ввели неправильное значение!')
@@ -36,7 +36,7 @@ def get_candy_per_move(candy_count):
     while True:
         try:
             input_num = int(input(f'Ввеите число конфет, которое будем брать за раз, но не больше чем {(candy_count//3)}: '))
-            if input_num > 0 and input_num < (candy_count//3):
+            if input_num > 0 and input_num <= (candy_count//3):
                 return input_num
         except ValueError:
             print('Вы ввели неправильное значение!')
